@@ -1,0 +1,161 @@
+		    	<script type="text/javascript">
+		    	function selectall(obj,a,b){
+		    		$(".sbox").prop('checked', $(obj).is(':checked'));
+		    		$(".sbox").each(function(){
+		    			selectquestions(this,a,b);
+		    		});
+		    	}
+		    	</script>
+		    	<form action="index.php?exam-teach-exams-selectquestions" method="post" direct="modal-body">
+					<table class="table form-inline">
+						<tr>
+							<td class="form-inline" colspan="2">
+								录入时间：
+								<input type="text" name="search[stime]" size="9"  class="form-control datetimepicker" data-date="2023-04-07" data-date-format="yyyy-mm-dd" id="stime" value=""/> - <input class="form-control datetimepicker" data-date="2023-04-07" data-date-format="yyyy-mm-dd" size="9" type="text" name="search[etime]" id="etime" value=""/>
+							</td>
+							<td>
+								关键字：
+								<input name="search[keyword]" class="form-control" size="8" type="text" value=""/>
+							</td>
+						</tr>
+						<tr>
+							<td class="form-inline">
+								<select name="search[questionisrows]" class="form-control">
+							  		<option value="0">普通试题</option>
+									<option value="1">题帽题</option>
+						  		</select>
+						  	</td>
+						  	<td>
+								<input type="hidden" name="search[questiontype]" value="1">
+								<input type="hidden" name="search[questionsubjectid]" value="">
+				        		录入人：<input name="search[username]" class="form-control" size="5" type="text" value=""/>
+				        	</td>
+				        	<td>
+								难度：<select name="search[questionlevel]" class="combox form-control">
+							  		<option value="0">难度不限</option>
+									<option value="1">易</option>
+									<option value="2">中</option>
+									<option value="3">难</option>
+						  		</select>
+							</td>
+				        </tr>
+				        <tr>
+							<td>
+						  		知识点：<select name="search[questionsectionid]" class="combox form-control" id="sectionselect" target="knowsselect" refUrl="?exam-teach-questions-ajax-getknowsbysectionid&sectionid={value}">
+							  		<option value="">选择章节</option>
+							  									  									  		<option value="6">演示站</option>
+							  									  								  		</select>
+						  	</td>
+						  	<td>
+						  		<select name="search[questionknowsid]" id="knowsselect" class="form-control">
+							  		<option value="">选择知识点</option>
+							  								  		</select>
+						  	</td>
+						  	<td>
+								<button class="btn btn-primary" type="submit">检索</button>
+							</td>
+						</tr>
+					</table>
+				</form>
+				<div class="input"></div>
+								<table class="table table-hover table-bordered">
+					<thead>
+						<tr class="info">
+					        <th width="50"><input type="checkbox" onclick="javascript:selectall(this,'iselectquestions_1','ialreadyselectnumber_1');"/></th>
+					        <th width="100">试题类型</th>
+					        <th>试题内容</th>
+					        <th width="50">难度</th>
+						</tr>
+					</thead>
+					<tbody>
+										        <tr>
+				          <td><input rel="1" class="sbox" type="checkbox" name="ids[]" value="4415" onclick="javascript:selectquestions(this,'iselectquestions_1','ialreadyselectnumber_1')"/></td>
+				          <td>单选题</td>
+				          <td>
+						  	  <a href="javascript:;" title="提出“王侯将相，宁有种乎？”的是谁？">提出“王侯将相，宁有种乎？”的是谁？</a>
+						  </td>
+						  <td>中</td>
+				        </tr>
+				        				        <tr>
+				          <td><input rel="1" class="sbox" type="checkbox" name="ids[]" value="4414" onclick="javascript:selectquestions(this,'iselectquestions_1','ialreadyselectnumber_1')"/></td>
+				          <td>单选题</td>
+				          <td>
+						  	  <a href="javascript:;" title="历史上把项羽和刘邦为争夺帝位的战争称为">历史上把项羽和刘邦为争夺帝位的战争称为</a>
+						  </td>
+						  <td>中</td>
+				        </tr>
+				        				        <tr>
+				          <td><input rel="1" class="sbox" type="checkbox" name="ids[]" value="4413" onclick="javascript:selectquestions(this,'iselectquestions_1','ialreadyselectnumber_1')"/></td>
+				          <td>单选题</td>
+				          <td>
+						  	  <a href="javascript:;" title="王充是哪个朝代的人">王充是哪个朝代的人</a>
+						  </td>
+						  <td>中</td>
+				        </tr>
+				        				        <tr>
+				          <td><input rel="1" class="sbox" type="checkbox" name="ids[]" value="4412" onclick="javascript:selectquestions(this,'iselectquestions_1','ialreadyselectnumber_1')"/></td>
+				          <td>单选题</td>
+				          <td>
+						  	  <a href="javascript:;" title="推翻西晋王朝的少数民族是">推翻西晋王朝的少数民族是</a>
+						  </td>
+						  <td>中</td>
+				        </tr>
+				        				        <tr>
+				          <td><input rel="1" class="sbox" type="checkbox" name="ids[]" value="4411" onclick="javascript:selectquestions(this,'iselectquestions_1','ialreadyselectnumber_1')"/></td>
+				          <td>单选题</td>
+				          <td>
+						  	  <a href="javascript:;" title="秦统一的时间？">秦统一的时间？</a>
+						  </td>
+						  <td>易</td>
+				        </tr>
+				        				        <tr>
+				          <td><input rel="1" class="sbox" type="checkbox" name="ids[]" value="4410" onclick="javascript:selectquestions(this,'iselectquestions_1','ialreadyselectnumber_1')"/></td>
+				          <td>单选题</td>
+				          <td>
+						  	  <a href="javascript:;" title="我国奴隶制文明开始于">我国奴隶制文明开始于</a>
+						  </td>
+						  <td>中</td>
+				        </tr>
+				        				        <tr>
+				          <td><input rel="1" class="sbox" type="checkbox" name="ids[]" value="4409" onclick="javascript:selectquestions(this,'iselectquestions_1','ialreadyselectnumber_1')"/></td>
+				          <td>单选题</td>
+				          <td>
+						  	  <a href="javascript:;" title="哪一项不属于北京人的生活？">哪一项不属于北京人的生活？</a>
+						  </td>
+						  <td>中</td>
+				        </tr>
+				        				        <tr>
+				          <td><input rel="1" class="sbox" type="checkbox" name="ids[]" value="4408" onclick="javascript:selectquestions(this,'iselectquestions_1','ialreadyselectnumber_1')"/></td>
+				          <td>单选题</td>
+				          <td>
+						  	  <a href="javascript:;" title="大运河开凿于?">大运河开凿于?</a>
+						  </td>
+						  <td>中</td>
+				        </tr>
+				        				        <tr>
+				          <td><input rel="1" class="sbox" type="checkbox" name="ids[]" value="4407" onclick="javascript:selectquestions(this,'iselectquestions_1','ialreadyselectnumber_1')"/></td>
+				          <td>单选题</td>
+				          <td>
+						  	  <a href="javascript:;" title="我国从什么时候起就有了历法">我国从什么时候起就有了历法</a>
+						  </td>
+						  <td>中</td>
+				        </tr>
+				        				        <tr>
+				          <td><input rel="1" class="sbox" type="checkbox" name="ids[]" value="4406" onclick="javascript:selectquestions(this,'iselectquestions_1','ialreadyselectnumber_1')"/></td>
+				          <td>单选题</td>
+				          <td>
+						  	  <a href="javascript:;" title="李渊建唐是什么时候?">李渊建唐是什么时候?</a>
+						  </td>
+						  <td>中</td>
+				        </tr>
+				        					</tbody>
+				</table>
+				<div class="pagination pagination-right">
+	            	<ul><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=1">|&lsaquo;</a></li><li><a href="#" class="current">1</a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=2">2</a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=3">3</a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=4">4</a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=5">5</a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=6">6</a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=7">7</a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=8">8</a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=9">9</a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=10">10</a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=11"> >> </a></li><li><a target="modal-body" class="ajax" href="index.php?exam-teach-exams-selectquestions&search[questionsubjectid]=&search[questiontype]=1&questionids=&rowsquestionids=&0.2256028424513956&page=335">&rsaquo;|</a></li><li><a>共3350条数据</a></li></ul>
+		        </div>
+		    	<script type="text/javascript">
+		    		jQuery(function($) {
+						markSelectedQuestions('ids[]','iselectquestions_1');
+		    		});
+		    	</script>
+				

@@ -1,0 +1,3619 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>在线考试</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery.json.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+	<script src="app/exam/styles/js/plugin.js"></script>
+</head><body data-spy="scroll" data-target="#myScrollspy">
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-3">
+				<h1 style="font-size:42px;color:#337AB7;"><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;<b>在线考试</b></h1>
+			</div>
+			<div class="col-xs-1">
+			</div>
+			<div class="col-xs-6" style="padding-top:22px;">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="text" style="width:380px;" class="form-control" id="keyword" placeholder="搜索课程/资料">
+					</div>
+					<button type="button" class="btn btn-info" onclick="javascript:window.location='index.php?content-app-search&keyword='+$('#keyword').val();">搜资料</button>
+					<button type="button" class="btn btn-primary" onclick="javascript:window.location='index.php?course-app-search&keyword='+$('#keyword').val();">搜课程</button>
+				</div>
+			</div>
+			<div class="col-xs-2" style="padding-top:22px;">
+				<ul class="list-unstyled list-inline">
+										<li>
+						<div class="btn-group">
+							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> admin</button>
+							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>
+								<li><a href="index.php?exam-teach"><em class="glyphicon glyphicon-book"></em> 教师管理</a></li>								<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>
+							</ul>
+						</div>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-12">
+				<ul class="list-unstyled list-inline">
+					<li class="menu col-xs-1"><a href="index.php" class="icon">首页</a></li>
+					<li class="menu col-xs-1"><a href="index.php?course">课程</a></li>
+					<li class="menu col-xs-1 active"><a href="index.php?exam">考试</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div><div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="box itembox">
+				<div class="col-xs-12">
+					<ol class="breadcrumb">
+					  <li><a href="index.php">首页</a></li>
+					  <li><a href="index.php?exam-app">考试</a></li>
+					  <li><a href="index.php?exam-app-basics">香港证券期货资格题库</a></li>
+					  <li><a href="index.php?exam-app-history">考试记录</a></li>
+					  <li class="active">查看错题</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid" id="questioncontent">
+	<div class="row-fluid">
+		<div class="main box">
+			<div class="col-xs-12" style="padding:0px;position:relative;">
+				<div class="scoreArea"></div>
+				<div class="box itembox">
+					<h2 class="text-center tt">演示站试卷</h2>
+				</div>
+																																<hr />
+				<div class="box itembox">
+					<blockquote class="questype">一、单选题</blockquote>
+				</div>
+					            	            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('892');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_892">
+							<input id="time_892" type="hidden" name="time[892]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中国古建筑学科的开拓者是：					</div>
+															<div class="choice">
+	                	<p>A:鲁班</p><p>B:梁思成</p><p>C:杨廷玉</p><p>D:童寓</p><p>E:吴良镛</p><p>F:刘敦桢</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第2题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('895');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_895">
+							<input id="time_895" type="hidden" name="time[895]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>古希腊哪个国家的儿童一出世就要受到严格挑选，体质弱的会被抛之荒野？					</div>
+															<div class="choice">
+	                	<p>A:雅典</p><p>B:斯巴达</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第3题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('898');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_898">
+							<input id="time_898" type="hidden" name="time[898]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>下列战役中，被陈毅元帅称作“人民群众用小车推出来的”是：					</div>
+															<div class="choice">
+	                	<p>A:淮海战役</p><p>B:平津战役</p><p>C:辽沈战役</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第4题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('904');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_904">
+							<input id="time_904" type="hidden" name="time[904]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>世界上第一家麻将博物馆坐落在：					</div>
+															<div class="choice">
+	                	<p>A:中国</p><p>B:日本</p><p>C:法国</p><p>D:印度</p><p>E:阿拉伯</p><p>F:美国</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第5题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1000');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1000">
+							<input id="time_1000" type="hidden" name="time[1000]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>世界上最早的节目主持人是主持什么节目的？					</div>
+															<div class="choice">
+	                	<p>A:戏剧</p><p>B:广告</p><p>C:新闻</p><p>D:音乐</p><p>E:舞蹈</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第6题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1014');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1014">
+							<input id="time_1014" type="hidden" name="time[1014]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>校园歌曲最早出现在					</div>
+															<div class="choice">
+	                	<p>A:台湾</p><p>B:巴西</p><p>C:日本</p><p>D:韩国</p><p>E:美国</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第7题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1037');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1037">
+							<input id="time_1037" type="hidden" name="time[1037]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>法国资产阶级革命爆发的时间是：					</div>
+															<div class="choice">
+	                	<p>A:1789年7月14日</p><p>B:1792年9月15日</p><p>C:1793年7月14日</p><p>D:1789年7月4日</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第8题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1062');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1062">
+							<input id="time_1062" type="hidden" name="time[1062]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>戊戌变法运动期间，维新派创办的第一份报纸是：					</div>
+															<div class="choice">
+	                	<p>A:中外纪闻</p><p>B:时务报</p><p>C:强学报</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第9题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1064');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1064">
+							<input id="time_1064" type="hidden" name="time[1064]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>世界上第一颗商用通信卫星是：					</div>
+															<div class="choice">
+	                	<p>A:“东方红号”</p><p>B:“晨鸟号”</p><p>C:“西可尔号”</p><p>D:“泰罗斯号”</p><p>E:“实践一号”</p><p>F:“闪电-1”</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第10题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1090');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1090">
+							<input id="time_1090" type="hidden" name="time[1090]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>古代欧洲文明发源于：					</div>
+															<div class="choice">
+	                	<p>A:爱琴文明</p><p>B:两河流域文明</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第11题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1128');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1128">
+							<input id="time_1128" type="hidden" name="time[1128]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中国共产党的创始人李大钊是被什么人杀害的？					</div>
+															<div class="choice">
+	                	<p>A:列强</p><p>B:军阀</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第12题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1272');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1272">
+							<input id="time_1272" type="hidden" name="time[1272]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>1990年12月19日，新中国内地第一家证券交易所开业，它是：					</div>
+															<div class="choice">
+	                	<p>A:上海证券交易所</p><p>B:深圳证券交易所</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第13题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1453');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1453">
+							<input id="time_1453" type="hidden" name="time[1453]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中国是世界上最早炼锌的国家，早在什么时候开始的？					</div>
+															<div class="choice">
+	                	<p>A:东汉</p><p>B:西汉</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第14题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1457');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1457">
+							<input id="time_1457" type="hidden" name="time[1457]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>最早徒步到达南极点的中国人是:					</div>
+															<div class="choice">
+	                	<p>A:张青松</p><p>B:秦大河</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第15题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1502');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1502">
+							<input id="time_1502" type="hidden" name="time[1502]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在赤壁之战前，曹操曾与孙权打了一仗，结果曹军大败，两员大将被杀，他们是谁？					</div>
+															<div class="choice">
+	                	<p>A:马延、张剀</p><p>B:焦触、张南</p><p>C:董衡、董超</p><p>D:宋宪、魏续</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第16题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1571');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1571">
+							<input id="time_1571" type="hidden" name="time[1571]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>清代唯一一位以嫡长子身份即位的皇帝是					</div>
+															<div class="choice">
+	                	<p>A:道光</p><p>B:乾隆</p><p>C:胤祯</p><p>D:顺治</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第17题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1592');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1592">
+							<input id="time_1592" type="hidden" name="time[1592]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>陈毅同志出生于：					</div>
+															<div class="choice">
+	                	<p>A:1901.8.26</p><p>B:1901.8.27</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第18题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1595');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1595">
+							<input id="time_1595" type="hidden" name="time[1595]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中国古代的一个时辰代表现在的多少时间？					</div>
+															<div class="choice">
+	                	<p>A:1小时</p><p>B:2小时</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第19题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1600');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1600">
+							<input id="time_1600" type="hidden" name="time[1600]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>1947年国民党反动派残酷镇压国统区“反饥饿、反内战、反迫害”的学生运动，制造的流血惨案是？					</div>
+															<div class="choice">
+	                	<p>A:一二．一惨案</p><p>B:较场口惨案</p><p>C:五二Ｏ惨案</p><p>D:下关惨案</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第20题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1625');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1625">
+							<input id="time_1625" type="hidden" name="time[1625]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>史料记载,内地和台湾最早的交流是					</div>
+															<div class="choice">
+	                	<p>A:秦</p><p>B:西汉</p><p>C:东汉</p><p>D:三国</p><p>E:唐</p><p>F:元</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第21题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1642');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1642">
+							<input id="time_1642" type="hidden" name="time[1642]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>地雷最早出现在（    ）。					</div>
+															<div class="choice">
+	                	<p>A:唐代</p><p>B:宋代</p><p>C:元代</p><p>D:明代</p><p>E:清代</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第22题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1644');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1644">
+							<input id="time_1644" type="hidden" name="time[1644]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中国传说中的炎帝中的“炎”是代表（    ）。					</div>
+															<div class="choice">
+	                	<p>A:日月星辰中的太阳</p><p>B:阴阳五行中的火</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第23题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1807');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1807">
+							<input id="time_1807" type="hidden" name="time[1807]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>谁首创了大写金额字"壹,贰...."					</div>
+															<div class="choice">
+	                	<p>A:秦始皇</p><p>B:李世民</p><p>C:朱元璋</p><p>D:康熙</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第24题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1813');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1813">
+							<input id="time_1813" type="hidden" name="time[1813]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>甲骨文是写在哪上面的					</div>
+															<div class="choice">
+	                	<p>A:陶片</p><p>B:兽骨</p><p>C:羊皮</p><p>D:竹片</p><p>E:绢</p><p>F:龟骨</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>F</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>F</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第25题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1834');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1834">
+							<input id="time_1834" type="hidden" name="time[1834]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中国古代重量计量单位有钱、两、斤。其中1斤＝10两；1两＝10钱；问1钱＝10？					</div>
+															<div class="choice">
+	                	<p>A:担</p><p>B:石</p><p>C:厘</p><p>D:分</p><p>E:毫</p><p>F:丝</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第26题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2189');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2189">
+							<input id="time_2189" type="hidden" name="time[2189]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>下列各项，旨在提高国民素质的是①军国民教育 ②平民教育 ③乡村教育 ④三民主义教育					</div>
+															<div class="choice">
+	                	<p>A:①②④</p><p>B:①③④</p><p>C:①②③</p><p>D:①④</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第27题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2324');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2324">
+							<input id="time_2324" type="hidden" name="time[2324]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《尚书》内容所属的类别是					</div>
+															<div class="choice">
+	                	<p>A:哲学散文集</p><p>B:历史散文集</p><p>C:文学散文集</p><p>D:艺术散文集</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第28题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2325');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2325">
+							<input id="time_2325" type="hidden" name="time[2325]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《左传》内容反映的历史时期是					</div>
+															<div class="choice">
+	                	<p>A:先秦</p><p>B:西周</p><p>C:春秋</p><p>D:战国</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第29题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2461');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2461">
+							<input id="time_2461" type="hidden" name="time[2461]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>世界最古老的大学是					</div>
+															<div class="choice">
+	                	<p>A:爱资哈尔大学(埃及·开罗)</p><p>B:波伦亚大学(意大利·波伦亚)</p><p>C:巴黎大学(法国·巴黎)</p><p>D:剑桥大学(英国·剑桥)</p><p>E:莱比锡大学(德国·莱比锡)</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第30题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2481');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2481">
+							<input id="time_2481" type="hidden" name="time[2481]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>慈禧发动政变是在哪一个帝王期间：					</div>
+															<div class="choice">
+	                	<p>A:嘉庆</p><p>B:咸丰</p><p>C:同治</p><p>D:道光</p><p>E:宣统</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第31题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2495');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2495">
+							<input id="time_2495" type="hidden" name="time[2495]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>被称为鲁班天子的是					</div>
+															<div class="choice">
+	                	<p>A:元天</p><p>B:元顺帝</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第32题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2563');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2563">
+							<input id="time_2563" type="hidden" name="time[2563]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>乐府指的是					</div>
+															<div class="choice">
+	                	<p>A:古代唱歌的场所</p><p>B:由皇家掌管的音乐机关</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第33题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2564');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2564">
+							<input id="time_2564" type="hidden" name="time[2564]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>古代称燕京是现在的？					</div>
+															<div class="choice">
+	                	<p>A:南京</p><p>B:北京</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第34题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2618');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2618">
+							<input id="time_2618" type="hidden" name="time[2618]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>朱允文丧父时					</div>
+															<div class="choice">
+	                	<p>A:十七岁</p><p>B:十八岁</p><p>C:十九岁</p><p>D:二十岁</p><p>E:二十一岁</p><p>F:二十二岁</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第35题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2669');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2669">
+							<input id="time_2669" type="hidden" name="time[2669]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>北宋是中国历史上以汉族为主体建立的封建王朝，建都：					</div>
+															<div class="choice">
+	                	<p>A:洛阳</p><p>B:南京</p><p>C:燕京</p><p>D:开封</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第36题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2741');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2741">
+							<input id="time_2741" type="hidden" name="time[2741]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在宋朝时太尉是武官还是文官？					</div>
+															<div class="choice">
+	                	<p>A:武官</p><p>B:文官</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第37题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2744');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2744">
+							<input id="time_2744" type="hidden" name="time[2744]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>太平天国定都南京时，当时将南京改名为					</div>
+															<div class="choice">
+	                	<p>A:建邺</p><p>B:建康</p><p>C:天京</p><p>D:金陵</p><p>E:江宁</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第38题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2746');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2746">
+							<input id="time_2746" type="hidden" name="time[2746]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中国古称“九州”，九州指哪九州？					</div>
+															<div class="choice">
+	                	<p>A:戎 冀 徐 阳 梁 薄 赤 豫 鲁</p><p>B:冀 兖 青 徐 荆 阳 豫 梁 雍</p><p>C:徐 阳 兖 荆 靖 雍 台 戎 次</p><p>D:神 次 雍 台 阳 梁 鲁 济 徐</p><p>E:青 徐 台 兖 次 靖 豫 济 宁</p><p>F:荆 戎 冀 阳 宁 豫 鲁 台 雍</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第39题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2765');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2765">
+							<input id="time_2765" type="hidden" name="time[2765]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中法战争中，指挥取得镇南关大捷的中国将领是：					</div>
+															<div class="choice">
+	                	<p>A:关天培</p><p>B:葛云飞</p><p>C:冯子才</p><p>D:戚继光</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第40题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3007');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3007">
+							<input id="time_3007" type="hidden" name="time[3007]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>哪个朝代称面条为冷淘？					</div>
+															<div class="choice">
+	                	<p>A:宋朝</p><p>B:唐朝</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第41题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3011');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3011">
+							<input id="time_3011" type="hidden" name="time[3011]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>最早侵略中国的西方国家是：					</div>
+															<div class="choice">
+	                	<p>A:英国</p><p>B:葡萄牙</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第42题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3078');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3078">
+							<input id="time_3078" type="hidden" name="time[3078]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>20世纪30年代日本制造各种借口挑起侵华战争，其中七七事变利用的是					</div>
+															<div class="choice">
+	                	<p>A:借口保护侨民</p><p>B:借口长辈实践中日并被侮辱</p><p>C:诬蔑中国士兵挑衅</p><p>D:借口一个士兵失踪</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第43题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3146');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3146">
+							<input id="time_3146" type="hidden" name="time[3146]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>大月氏王国在5世纪后半叶亡于					</div>
+															<div class="choice">
+	                	<p>A:厳哒</p><p>B:西藏</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第44题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3177');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3177">
+							<input id="time_3177" type="hidden" name="time[3177]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在甲午海战中殉国的海军将领刘步蟾和林永升都留学欧洲吗					</div>
+															<div class="choice">
+	                	<p>A:不是</p><p>B:是</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第45题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3313');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3313">
+							<input id="time_3313" type="hidden" name="time[3313]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>韩湘是韩愈的：					</div>
+															<div class="choice">
+	                	<p>A:侄子</p><p>B:侄孙</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第46题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3335');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3335">
+							<input id="time_3335" type="hidden" name="time[3335]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>我军历史上兵员数最高曾有多少？					</div>
+															<div class="choice">
+	                	<p>A:620万左右</p><p>B:1400万左右</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第47题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3338');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3338">
+							<input id="time_3338" type="hidden" name="time[3338]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>我军是从哪一年开始实行兵役制度的？					</div>
+															<div class="choice">
+	                	<p>A:1927年</p><p>B:1956年</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第48题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3339');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3339">
+							<input id="time_3339" type="hidden" name="time[3339]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>我军是从哪一年开始实行义务兵役制的？					</div>
+															<div class="choice">
+	                	<p>A:1955</p><p>B:1978</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第49题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3344');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3344">
+							<input id="time_3344" type="hidden" name="time[3344]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>五线谱最先出现在哪个国家：					</div>
+															<div class="choice">
+	                	<p>A:巴西</p><p>B:意大利</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第50题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3397');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3397">
+							<input id="time_3397" type="hidden" name="time[3397]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中国的军事家兵圣是谁？					</div>
+															<div class="choice">
+	                	<p>A:吴起</p><p>B:孙子</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第51题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3428');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3428">
+							<input id="time_3428" type="hidden" name="time[3428]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>与类人猿比较，人类有许多不同的特点，生物学家把下列哪一项作为人猿分界的最重要标准					</div>
+															<div class="choice">
+	                	<p>A:大脑特别发达</p><p>B:直立行走</p><p>C:制造和使用工具</p><p>D:产生了语言</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第52题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3473');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3473">
+							<input id="time_3473" type="hidden" name="time[3473]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中国历史上唯一的女皇是？					</div>
+															<div class="choice">
+	                	<p>A:武则天</p><p>B:慈禧太后</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第53题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3547');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3547">
+							<input id="time_3547" type="hidden" name="time[3547]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>抗日战争中，中国方面牺牲的军衔最高的将领是:					</div>
+															<div class="choice">
+	                	<p>A:李宗仁</p><p>B:张自忠</p><p>C:张学良</p><p>D:杨虎城</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第54题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3602');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3602">
+							<input id="time_3602" type="hidden" name="time[3602]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>春秋决狱与哪一历史人物有关？					</div>
+															<div class="choice">
+	                	<p>A:孔子</p><p>B:董仲舒</p><p>C:海瑞</p><p>D:狄仁杰</p><p>E:包拯</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第55题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3607');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3607">
+							<input id="time_3607" type="hidden" name="time[3607]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>世界上死亡人数最多的海难事件是					</div>
+															<div class="choice">
+	                	<p>A:泰坦尼克号事件</p><p>B:江亚轮事件</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第56题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3723');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3723">
+							<input id="time_3723" type="hidden" name="time[3723]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>古代小说常用沉鱼落雁，闭月羞花形容女性之美，其中闭月是指：					</div>
+															<div class="choice">
+	                	<p>A:西施</p><p>B:貂禅</p><p>C:王昭君</p><p>D:杨玉环</p><p>E:赵飞燕</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第57题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3729');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3729">
+							<input id="time_3729" type="hidden" name="time[3729]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>古时称送考生入京师应会试的官车为公车，它是什么朝代的惯例？					</div>
+															<div class="choice">
+	                	<p>A:隋朝</p><p>B:汉朝</p><p>C:唐朝</p><p>D:宋朝</p><p>E:渎朝</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第58题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3739');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3739">
+							<input id="time_3739" type="hidden" name="time[3739]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>楚汉战争是谁和谁打？					</div>
+															<div class="choice">
+	                	<p>A:刘邦和项羽</p><p>B:刘邦和萧何</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第59题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3748');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3748">
+							<input id="time_3748" type="hidden" name="time[3748]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>最早的彩色版报纸出现在哪个国家					</div>
+															<div class="choice">
+	                	<p>A:英国</p><p>B:美国</p><p>C:法国</p><p>D:德国</p><p>E:中国</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第60题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3818');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3818">
+							<input id="time_3818" type="hidden" name="time[3818]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>临终前三呼过河的南宋抗金将领名将：					</div>
+															<div class="choice">
+	                	<p>A:宗泽</p><p>B:岳飞</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第61题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3858');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3858">
+							<input id="time_3858" type="hidden" name="time[3858]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>遵义会议批评揭发了第几次反围剿的错误？					</div>
+															<div class="choice">
+	                	<p>A:第三次</p><p>B:第四次</p><p>C:第五次</p><p>D:第六次</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第62题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3903');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3903">
+							<input id="time_3903" type="hidden" name="time[3903]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在1904年的日俄战争中，日军在旅顺制造了“旅顺大屠杀”，你知道这次屠杀是由谁积极策划的吗？					</div>
+															<div class="choice">
+	                	<p>A:黑岩</p><p>B:东乡平八朗</p><p>C:大山岩</p><p>D:乃木希典</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第63题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3977');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3977">
+							<input id="time_3977" type="hidden" name="time[3977]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>六国中，哪国最先被秦所灭？					</div>
+															<div class="choice">
+	                	<p>A:齐</p><p>B:楚</p><p>C:燕</p><p>D:韩</p><p>E:赵</p><p>F:魏</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第64题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('4063');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_4063">
+							<input id="time_4063" type="hidden" name="time[4063]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>1519-1522年，谁领导船队环航地球？					</div>
+															<div class="choice">
+	                	<p>A:麦哲伦</p><p>B:哥伦布</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第65题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('4100');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_4100">
+							<input id="time_4100" type="hidden" name="time[4100]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>“国民赖公有人格，英雄无命亦天心”是梁启超在悼念(   )时说的。					</div>
+															<div class="choice">
+	                	<p>A:蔡锷</p><p>B:黄兴</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第66题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('4170');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_4170">
+							<input id="time_4170" type="hidden" name="time[4170]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>地球的南北极会地震吗？					</div>
+															<div class="choice">
+	                	<p>A:会</p><p>B:不会</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第67题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('4187');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_4187">
+							<input id="time_4187" type="hidden" name="time[4187]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在市场经济中，企业进行生产经营活动的直接目的是					</div>
+															<div class="choice">
+	                	<p>A:发展生产</p><p>B:繁荣市场</p><p>C:追求利润</p><p>D:增加税收</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第68题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('4232');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_4232">
+							<input id="time_4232" type="hidden" name="time[4232]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>维也纳体系下的欧洲主要矛盾冲突不包括					</div>
+															<div class="choice">
+	                	<p>A:工业资产阶级与无产阶级的矛盾</p><p>B:工业资产阶级与封建阶级的矛盾</p><p>C:广大人民与封建统治者的矛盾</p><p>D:被压迫民族与殖民者的矛盾</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第69题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('4293');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_4293">
+							<input id="time_4293" type="hidden" name="time[4293]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《史记》中的“世家”是给什么人做的传？					</div>
+															<div class="choice">
+	                	<p>A:皇帝</p><p>B:诸侯王</p><p>C:重臣</p><p>D:贵族</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第70题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('4350');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_4350">
+							<input id="time_4350" type="hidden" name="time[4350]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>辕门射戟是下面的何人所为？					</div>
+															<div class="choice">
+	                	<p>A:关羽</p><p>B:吕布</p><p>C:孙坚</p><p>D:曹操</p><p>E:袁绍</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+																																												<hr />
+				<div class="box itembox">
+					<blockquote class="questype">二、多选题</blockquote>
+				</div>
+					            	            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('975');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_975">
+							<input id="time_975" type="hidden" name="time[975]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>下列姓氏中，哪些曾是古代的官名？（多选）					</div>
+															<div class="choice">
+	                	<p>A:欧阳</p><p>B:司马</p><p>C:上官</p><p>D:夏侯</p><p>E:司徒</p><p>F:司空</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B、C、D、E、F</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B、C、D、E、F</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第2题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1178');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1178">
+							<input id="time_1178" type="hidden" name="time[1178]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>被称做“意大利文艺复兴三杰”的是（多选）					</div>
+															<div class="choice">
+	                	<p>A:达·芬奇</p><p>B:波提切利</p><p>C:拉菲尔</p><p>D:提香</p><p>E:米开朗基罗</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A、C、E</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A、C、E</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第3题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1895');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1895">
+							<input id="time_1895" type="hidden" name="time[1895]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中共“七大”的重大意义在于（多选）					</div>
+															<div class="choice">
+	                	<p>A:确立了毛泽东思想为党的指导思想</p><p>B:提出了党的工作重心由农村转移到城市</p><p>C:实现了全党空前的团结和统一</p><p>D:为抗日战争和新民主主义革命的胜利作了重要准备</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A、C、D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A、C、D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第4题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2036');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2036">
+							<input id="time_2036" type="hidden" name="time[2036]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>从武昌起义到南京临时政府成立前，帝国主义破坏革命的主要活动有（多选）					</div>
+															<div class="choice">
+	                	<p>A:扣留汉口等地的海关税收，送给清政府</p><p>B:扶植袁世凯出任清朝内阁总理</p><p>C:同袁世凯签订《善后借款合同》</p><p>D:英国公使策划南北“和谈”</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A、D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A、D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第5题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2073');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2073">
+							<input id="time_2073" type="hidden" name="time[2073]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>下列哪些事物的出现体现了旧生产方式向新生产方式的过渡？（多选）					</div>
+															<div class="choice">
+	                	<p>A:三圃制 　</p><p>B:初税亩</p><p>C:包买商</p><p>D:两税法</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B、C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B、C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第6题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2074');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2074">
+							<input id="time_2074" type="hidden" name="time[2074]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在空想社会主义者的设想中，对创立科学共产主义理论具有重要意义的有（多选）					</div>
+															<div class="choice">
+	                	<p>A:消灭城乡差别 　</p><p>B:劳动成为人们的需要</p><p>C:教育与生产劳动相结合</p><p>D:解放妇女</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A、C、D</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A、C、D</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第7题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2541');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2541">
+							<input id="time_2541" type="hidden" name="time[2541]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>战国四公子：（多选）					</div>
+															<div class="choice">
+	                	<p>A:信陵君魏无忌</p><p>B:孟尝君田文</p><p>C:田原君黄胜</p><p>D:春申君黄歇</p><p>E:汩罗君屈原</p><p>F:平原君赵胜</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A、D、F</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A、D、F</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第8题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('2678');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_2678">
+							<input id="time_2678" type="hidden" name="time[2678]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>签定《辛丑条约》的没有哪个国家（多选）					</div>
+															<div class="choice">
+	                	<p>A:西班牙</p><p>B:约旦</p><p>C:伊拉克</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B、C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B、C</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第9题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3618');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3618">
+							<input id="time_3618" type="hidden" name="time[3618]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>建安文学的“三曹”是哪父子三人？（多选）					</div>
+															<div class="choice">
+	                	<p>A:曹植</p><p>B:曹芳</p><p>C:曹髦</p><p>D:曹操</p><p>E:曹丕</p><p>F:曹休</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A、D、E</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A、D、E</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第10题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('4040');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_4040">
+							<input id="time_4040" type="hidden" name="time[4040]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>被称为”汉家三杰“的汉朝开国功臣是（多选）					</div>
+															<div class="choice">
+	                	<p>A:樊哙</p><p>B:萧何</p><p>C:陈平</p><p>D:韩信</p><p>E:张良</p><p>F:夏侯婴</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B、D、E</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B、D、E</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+																																												<hr />
+				<div class="box itembox">
+					<blockquote class="questype">三、判断题</blockquote>
+				</div>
+					            	            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1316');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1316">
+							<input id="time_1316" type="hidden" name="time[1316]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>"爱琴文明"属于石器文明。					</div>
+															<div class="choice">
+	                	<p>A:对</p><p>B:错</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第2题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3171');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3171">
+							<input id="time_3171" type="hidden" name="time[3171]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>把玉米人美洲带到西班牙的是哥伦布吗					</div>
+															<div class="choice">
+	                	<p>A:是</p><p>B:不是</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第3题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3432');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3432">
+							<input id="time_3432" type="hidden" name="time[3432]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中国六大古都中有没有杭州？					</div>
+															<div class="choice">
+	                	<p>A:有</p><p>B:没有</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第4题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('3647');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_3647">
+							<input id="time_3647" type="hidden" name="time[3647]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>历史上著名的赵州桥是鲁斑建造的么					</div>
+															<div class="choice">
+	                	<p>A:是</p><p>B:不是</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+									            	                            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第5题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('4416');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_4416">
+							<input id="time_4416" type="hidden" name="time[4416]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a><p>刘秀是光武帝吗？</p>
+
+<p>
+<audio controls="controls" title=""><source src="" type="audio/mp3" />Your browser does not support this audio format.</audio>
+</p>					</div>
+															<div class="choice">
+	                	<p>A:是</p>
+
+<p>B:不是</p>	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>演示站&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td><p>A</p></td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+																																																																																							</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid box" style="background-color:#337AB7;margin-bottom:0px;" id="footer">
+	<div class="row-fluid">
+		<div class="main itembox">
+			<div class="col-xs-12">
+				<ul class="list-unstyled">
+					<li class="text-center"><a href="">在线考试 </a></li>
+					<li class="text-center"><a href="">Copyright © 2015-2017</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div></body>
+</html>

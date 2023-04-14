@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>在线考试系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+</head><body>
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">	<div class="row-fluid">		<div class="main">			<div class="col-xs-10">				<h2 style="color:#337AB7;"><a href="index.php"><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;在线考试系统管理平台</a></h2>			</div>			<div class="col-xs-2" style="padding-top:22px;">				<ul class="list-unstyled list-inline">										<li>						<div class="btn-group">							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> peadmin</button>							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">								<span class="caret"></span>								<span class="sr-only">Toggle Dropdown</span>							</button>							<ul class="dropdown-menu">								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>																<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>							</ul>						</div>					</li>									</ul>			</div>		</div>	</div></div><div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">	<div class="row-fluid">		<div class="main">			<div class="col-xs-12">				<ul class="list-unstyled list-inline">					<li class="menu col-xs-1">						<a href="index.php?core-master">全局</a>					</li>															<li class="menu col-xs-1">						<a href="index.php?user-master">用户模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?exam-master">考试模块</a>					</li>																														<li class="menu col-xs-1">						<a href="index.php?document-master">文件模块</a>					</li>																				<li class="menu col-xs-1 active">						<a href="index.php?content-master">内容模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?bank-master">财务模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?course-master">课程模块</a>					</li>														</ul>			</div>		</div>	</div></div><div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-2" style="padding-top:10px;margin-bottom:0px;">
+				<ul class="list-group">	<li class="list-group-item ">				<a href="index.php?content-master">首页</a>			</li>	<li class="list-group-item ">				<a href="index.php?content-master-category">分类管理</a>			</li>	<li class="list-group-item active">		内容管理			</li>	<li class="list-group-item ">				<a href="index.php?content-master-module">模型管理</a>			</li>	<li class="list-group-item ">				<a href="index.php?content-master-blocks">标签管理</a>			</li></ul>			</div>
+			<div class="col-xs-10" id="datacontent">
+				<div class="box itembox" style="margin-bottom:0px;border-bottom:1px solid #CCCCCC;">
+					<div class="col-xs-12">
+						<ol class="breadcrumb">
+							<li><a href="index.php?content-master">内容模块</a></li>
+														<li class="active">内容管理</li>
+													</ol>
+					</div>
+				</div>
+				<div class="box itembox" style="padding-top:10px;margin-bottom:0px;overflow:visible">
+					<h4 class="title" style="padding:10px;">
+						内容管理
+						<span class="pull-right">
+							<a data-toggle="dropdown" class="btn btn-primary" href="#">添加内容 <strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?content-master-contents-add&catid=&page=1">添加内容</a></li>
+								<li><a href="index.php?content-master-contents&catid=&page=1">上级分类</a></li>
+							</ul>
+						</span>
+					</h4>
+					<h4>所有内容</h4>
+					<form action="index.php?content-master-contents" method="post" class="form-inline">
+						<table class="table">
+					        <tr>
+								<td>
+									内容ID：
+								</td>
+								<td>
+									<input name="search[contentid]" class="form-control" size="15" type="text" class="number" value=""/>
+								</td>
+								<td>
+									录入时间：
+								</td>
+								<td>
+									<input class="form-control datetimepicker" data-date="2023-04-12" data-date-format="yyyy-mm-dd" type="text" name="search[stime]" size="10" id="stime" value=""/> - <input class="form-control datetimepicker" data-date="2023-04-12" data-date-format="yyyy-mm-dd" size="10" type="text" name="search[etime]" id="etime" value=""/>
+								</td>
+								<td>
+									关键字：
+								</td>
+								<td>
+									<input class="form-control" name="search[keyword]" size="15" type="text" value=""/>
+								</td>
+							</tr>
+					        <tr>
+								<td>
+									录入人：
+								</td>
+					        	<td>
+					        		<input class="form-control" name="search[username]" size="15" type="text" value=""/>
+					        	</td>
+					        	<td>
+									内容模型：
+								</td>
+								<td>
+									<select name="search[contentmoduleid]" class="form-control">
+								  		<option value="0">不限</option>
+								  										  		<option value="4">新闻</option>
+								  									  		</select>
+								</td>
+								<td>
+									<button class="btn btn-primary" type="submit">提交</button>
+								</td>
+								<td></td>
+					        </tr>
+					        <tr>
+								<td>
+									分类：
+								</td>
+								<td colspan="5">
+							  		<select msg="您必须选择一个分类" class="autocombox form-control" name="search[contentcatid]" refUrl="index.php?content-master-category-ajax-getchildcategory&catid={value}">
+						            	<option value="">选择一级分类</option>
+						            							            	<option value="4">最新通知</option>
+						            							            	<option value="3">会计职称</option>
+						            							            	<option value="1">人力资源</option>
+						            							            	<option value="2">首页头图</option>
+						            							            </select>
+					        	</td>
+							</tr>
+						</table>
+						<div class="input">
+							<input type="hidden" value="1" name="search[argsmodel]" />
+						</div>
+					</form>
+					<form action="index.php?content-master-contents-lite" method="post">
+						<fieldset>
+							<table class="table table-hover table-bordered">
+								<thead>
+									<tr class="info">
+					                    <th width="36"><input type="checkbox" class="checkall" target="delids"/></th>
+					                    <th width="40">权重</th>
+					                    <th width="40">ID</th>
+					                    <th width="60">缩略图</th>
+								        <th>标题</th>
+								        <th width="80">分类</th>
+								        <th width="80">发布时间</th>
+								        <th width="100">操作</th>
+					                </tr>
+					            </thead>
+					            <tbody>
+					            						            	<tr>
+					                    <td><input type="checkbox" name="delids[76]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[76]" value="4" style="width:32px;padding:2px 5px;"/></td>
+					                    <td>76</td>
+					                    <td class="picture"><img src="files/attach/images/content/20180918/15372810818826.jpg" alt="" style="width:48px;"/></td>
+					                    <td>
+					                        人力二级高频考点精髓					                    </td>
+					                    <td>
+					                    	<a href="?content-master-contents&catid=1" target="">人力资源</a>
+					                    </td>
+					                    <td>
+					                    	17-05-03					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?content-master-contents-edit&catid=1&contentid=76&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?content-master-contents-del&catid=&contentid=76&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[83]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[83]" value="3" style="width:32px;padding:2px 5px;"/></td>
+					                    <td>83</td>
+					                    <td class="picture"><img src="files/attach/images/content/20200507/15888204011631.jpg" alt="" style="width:48px;"/></td>
+					                    <td>
+					                        11					                    </td>
+					                    <td>
+					                    	<a href="?content-master-contents&catid=2" target="">首页头图</a>
+					                    </td>
+					                    <td>
+					                    	17-05-03					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?content-master-contents-edit&catid=2&contentid=83&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?content-master-contents-del&catid=&contentid=83&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[79]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[79]" value="3" style="width:32px;padding:2px 5px;"/></td>
+					                    <td>79</td>
+					                    <td class="picture"><img src="files/attach/images/content/20170613/14973386307088.jpg" alt="" style="width:48px;"/></td>
+					                    <td>
+					                        常用法律法规重点知识总结					                    </td>
+					                    <td>
+					                    	<a href="?content-master-contents&catid=1" target="">人力资源</a>
+					                    </td>
+					                    <td>
+					                    	17-05-03					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?content-master-contents-edit&catid=1&contentid=79&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?content-master-contents-del&catid=&contentid=79&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[78]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[78]" value="2" style="width:32px;padding:2px 5px;"/></td>
+					                    <td>78</td>
+					                    <td class="picture"><img src="files/attach/images/content/20180512/15261179805598.jpg" alt="" style="width:48px;"/></td>
+					                    <td>
+					                        职业道德核心要点					                    </td>
+					                    <td>
+					                    	<a href="?content-master-contents&catid=1" target="">人力资源</a>
+					                    </td>
+					                    <td>
+					                    	17-05-09					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?content-master-contents-edit&catid=1&contentid=78&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?content-master-contents-del&catid=&contentid=78&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[55]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[55]" value="2" style="width:32px;padding:2px 5px;"/></td>
+					                    <td>55</td>
+					                    <td class="picture"><img src="files/attach/images/content/20170601/14963049637279.jpg" alt="" style="width:48px;"/></td>
+					                    <td>
+					                        第二个首页滚动图片					                    </td>
+					                    <td>
+					                    	<a href="?content-master-contents&catid=2" target="">首页头图</a>
+					                    </td>
+					                    <td>
+					                    	17-02-28					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?content-master-contents-edit&catid=2&contentid=55&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?content-master-contents-del&catid=&contentid=55&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[54]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[54]" value="1" style="width:32px;padding:2px 5px;"/></td>
+					                    <td>54</td>
+					                    <td class="picture"><img src="files/attach/images/content/20170228/14882463441403.jpg" alt="" style="width:48px;"/></td>
+					                    <td>
+					                        欢迎使用长安题库					                    </td>
+					                    <td>
+					                    	<a href="?content-master-contents&catid=2" target="">首页头图</a>
+					                    </td>
+					                    <td>
+					                    	17-02-28					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?content-master-contents-edit&catid=2&contentid=54&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?content-master-contents-del&catid=&contentid=54&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[86]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[86]" value="1" style="width:32px;padding:2px 5px;"/></td>
+					                    <td>86</td>
+					                    <td class="picture"><img src="files/attach/images/content/20170613/14973388075254.jpg" alt="" style="width:48px;"/></td>
+					                    <td>
+					                        编者寄语					                    </td>
+					                    <td>
+					                    	<a href="?content-master-contents&catid=3" target="">会计职称</a>
+					                    </td>
+					                    <td>
+					                    	17-01-04					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?content-master-contents-edit&catid=3&contentid=86&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?content-master-contents-del&catid=&contentid=86&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[114]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[114]" value="0" style="width:32px;padding:2px 5px;"/></td>
+					                    <td>114</td>
+					                    <td class="picture"><img src="files/attach/images/content/20220912/16629713368902.jpg" alt="" style="width:48px;"/></td>
+					                    <td>
+					                        22					                    </td>
+					                    <td>
+					                    	<a href="?content-master-contents&catid=2" target="">首页头图</a>
+					                    </td>
+					                    <td>
+					                    	22-09-12					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?content-master-contents-edit&catid=2&contentid=114&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?content-master-contents-del&catid=&contentid=114&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[113]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[113]" value="0" style="width:32px;padding:2px 5px;"/></td>
+					                    <td>113</td>
+					                    <td class="picture"><img src="files/attach/images/content/20190929/15697552163879.jpg" alt="" style="width:48px;"/></td>
+					                    <td>
+					                        (中级)人资专业知识高频考点					                    </td>
+					                    <td>
+					                    	<a href="?content-master-contents&catid=1" target="">人力资源</a>
+					                    </td>
+					                    <td>
+					                    	19-09-29					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?content-master-contents-edit&catid=1&contentid=113&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?content-master-contents-del&catid=&contentid=113&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[110]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[110]" value="0" style="width:32px;padding:2px 5px;"/></td>
+					                    <td>110</td>
+					                    <td class="picture"><img src="files/attach/images/content/20181105/15413858622502.jpg" alt="" style="width:48px;"/></td>
+					                    <td>
+					                        人力资源二级必背知识					                    </td>
+					                    <td>
+					                    	<a href="?content-master-contents&catid=1" target="">人力资源</a>
+					                    </td>
+					                    <td>
+					                    	18-11-05					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?content-master-contents-edit&catid=1&contentid=110&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?content-master-contents-del&catid=&contentid=110&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					        	</tbody>
+					        </table>
+					        <div class="control-group">
+					            <div class="controls">
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="modify" checked/>排序
+						            </label>
+						            <!--
+						            <label class="radio inline">
+						                <input type="radio" name="action" value="moveposition" />推荐
+						            </label>
+						            -->
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="copycategory"/>复制
+						            </label>
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="movecategory" />移动
+						            </label>
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="delete" />删除
+						            </label>
+						            						            <label class="radio-inline">
+						            	<button class="btn btn-primary" type="submit">提交</button>
+						            </label>
+						            <input type="hidden" name="modifycontentsequence" value="1"/>
+						            <input type="hidden" name="catid" value=""/>
+						            <input type="hidden" name="page" value="1"/>
+						        </div>
+					        </div>
+							<ul class="pagination pull-right">
+								<li><a href="#" class="current">1</a></li><li><a target="" href="index.php?content-master-contents&page=2">2</a></li><li><a>共19条数据</a></li>							</ul>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid box" style="background-color:#337AB7;margin-bottom:0px;" id="footer">
+	<div class="row-fluid">
+		<div class="main itembox">
+			<div class="col-xs-12">
+				<ul class="list-unstyled">
+							
+				</ul>
+			</div>
+		</div>
+	</div>
+</div></body>
+</html>

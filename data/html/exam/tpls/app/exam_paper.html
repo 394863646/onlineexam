@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>在线考试</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery.json.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+	<script src="app/exam/styles/js/plugin.js"></script>
+</head><body data-spy="scroll" data-target="#myScrollspy" oncontextmenu='return false' ondragstart='return false' onselectstart ='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false' onmouseup='document.selection.empty()'>
+<div class="container-fluid" id="questioncontent">
+	<div class="row-fluid">
+		<div class="main box">
+			<div class="col-xs-3" id="questionbar">
+				<dl class="clear" style="width:270px;" data-spy="affix" data-offset-top="235" id="questionindex">
+					<dd>
+						<h2><a class="btn btn-danger col-xs-12" style="font-size:1.2em;"><span id="timer_h">00</span>：<span id="timer_m">00</span>：<span id="timer_s">00</span></a></h2>
+					</dd>
+					<dt class="float_l"><h4>&nbsp;</h4></dt>
+					<ul class="nav nav-tabs" role="tablist">
+																																																<li role="presentation" class="active"><a href="#qt_1" aria-controls="home" role="tab" data-toggle="tab">一</a></li>
+																																																						<li role="presentation"><a href="#qt_2" aria-controls="home" role="tab" data-toggle="tab">二</a></li>
+																																																																																																																																															</ul>
+					<div class="tab-content" style="margin-top:5px;" id="questionindex">
+																																																<div role="tabpanel" class="tab-pane tableindex active" id="qt_1">
+										                			                			                							<a id="sign_97588" href="javascript:;" onclick="javascript:gotoquestion('97588')" class="btn btn-default">1</a>
+																				</div>
+																																																<div role="tabpanel" class="tab-pane tableindex" id="qt_2">
+										                			                			                							<a id="sign_97463" href="javascript:;" onclick="javascript:gotoquestion('97463')" class="btn btn-default">1</a>
+																				</div>
+																																																																																																																																															</div>
+				</dl>
+			</div>
+			<form id="form1" name="form1" method="post" action="index.php?exam-app-exam-score" class="col-xs-9 split pull-right" style="padding:0px;">
+				<div class="box itembox">
+					<h2 class="text-center">人力资源管理经济基础知识初级模拟测试二</h2>
+				</div>
+																																<div class="box itembox questionpanel" id="questype_1">
+					<blockquote class="questype">一、单选题每题的备选项中，只有1个最符合题意</blockquote>
+				</div>
+				                                                				<div class="box itembox paperexamcontent" id="questions_97588" rel="1">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('97588',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_97588">
+							<input id="time_97588" type="hidden" name="time[97588]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>反映了一国国际收支的综合情况，可以衡量国际收支对一国储备压力的国际收支局部差额是（  ）。					</div>
+															<div class="choice">
+                    	<p>A:贸易差额</p><p>B:经常差额</p><p>C:基本差额</p><p>D:综合差额</p>                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[97588]" rel="97588" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[97588]" rel="97588" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[97588]" rel="97588" value="C" />C </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[97588]" rel="97588" value="D" />D </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(1);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+																																								<div class="box itembox questionpanel" id="questype_2">
+					<blockquote class="questype">二、多选题每题的备选项中，有2个或2个以上符合题意，至少有1个错项。错选，本题不得分；少选，所选的每个选项得0.5分</blockquote>
+				</div>
+				                                                				<div class="box itembox paperexamcontent" id="questions_97463" rel="2">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('97463',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_97463">
+							<input id="time_97463" type="hidden" name="time[97463]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>下列选项中，属于长期金融工具的是（  ）。					</div>
+															<div class="choice">
+                    	<p>A:公司债券</p><p>B:国库券</p><p>C:股票</p><p>D:银行汇票</p><p>E:大额可转让定期存单</p>                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="checkbox-inline"><input type="checkbox" name="question[97463][0]" rel="97463" value="A" />A </label>
+	                        	                        	                        <label class="checkbox-inline"><input type="checkbox" name="question[97463][1]" rel="97463" value="B" />B </label>
+	                        	                        	                        <label class="checkbox-inline"><input type="checkbox" name="question[97463][2]" rel="97463" value="C" />C </label>
+	                        	                        	                        <label class="checkbox-inline"><input type="checkbox" name="question[97463][3]" rel="97463" value="D" />D </label>
+	                        	                        	                        <label class="checkbox-inline"><input type="checkbox" name="question[97463][4]" rel="97463" value="E" />E </label>
+	                        	                        	                                                                    </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(0);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																	</div>
+				</div>
+																																																																																																								<h3 class="text-center">
+					<input type="hidden" name="insertscore" value="1"/>
+					<a class="btn btn-primary" style="font-size:1em;width:270px;" href="#submodal" role="button" data-toggle="modal">交 卷</a>
+				</h3>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="submodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">交卷</h4>
+			</div>
+			<div class="modal-body">
+				<p>共有试题 <span class="allquestionnumber">50</span> 题，已做 <span class="yesdonumber">0</span> 题。您确认要交卷吗？</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" onclick="javascript:submitPaper();" class="btn btn-primary">确定交卷</button>
+				<button aria-hidden="true" class="btn" type="button" data-dismiss="modal">再检查一下</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+var qindex = 0;
+function gotoquestion(questid)
+{
+	$(".questionpanel").hide();
+	$(".paperexamcontent").hide();
+	$("#questions_"+questid).show();
+	$("#questype_"+$("#questions_"+questid).attr('rel')).show();
+}
+function gotoindexquestion(index)
+{
+	$(".questionpanel").hide();
+	$(".paperexamcontent").hide();
+	$(".paperexamcontent").eq(index).show();
+	$("#questype_"+$(".paperexamcontent").eq(index).attr('rel')).show();
+}
+$(document).ready(function(){
+	$.get('index.php?exam-app-index-ajax-lefttime&rand'+Math.random(),function(data){
+		var setting = {
+						time:90,
+						hbox:$("#timer_h"),
+			mbox:$("#timer_m"),
+			sbox:$("#timer_s"),
+			finish:function(){
+				submitPaper();
+			}
+		}
+		setting.lefttime = parseInt(data);
+		countdown(setting);
+	});
+
+	(function(){
+		$(".questionpanel").hide();
+		$(".questionpanel:first").show();
+		$(".paperexamcontent").hide();
+		$(".paperexamcontent:first").show();
+	})();
+
+	setInterval(saveanswer,120000);
+
+	initData = $.parseJSON(storage.getItem('questions'));
+	if(initData){
+		for(var p in initData){
+			if(p!='set')
+			formData[p]=initData[p];
+			$("#time_"+$('[name="'+p+'"]').attr('rel')).val(initData[p].time);
+		}
+
+		var textarea = $('#form1 textarea');
+		$.each(textarea,function(){
+			var _this = $(this);
+			if(initData[_this.attr('name')])
+			{
+				_this.val(initData[_this.attr('name')].value);
+				CKEDITOR.instances[_this.attr('id')].setData(initData[_this.attr('name')].value);
+				if(initData[_this.attr('name')].value && initData[_this.attr('name')].value != '')
+				batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+			}
+		});
+		var texts = $('#form1 :input[type=text]');
+		$.each(texts,function(){
+			var _this = $(this);
+			if(initData[_this.attr('name')])
+			{
+				_this.val(initData[_this.attr('name')]?initData[_this.attr('name')].value:'');
+				if(initData[_this.attr('name')].value && initData[_this.attr('name')].value != '')
+				batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+			}
+		});
+
+		var radios = $('#form1 :input[type=radio]');
+		$.each(radios,function(){
+			var _= this, v = initData[_.name]?initData[_.name].value:null;
+			var _this = $(this);
+			if(v!=''&&v==_.value){
+				_.checked = true;
+				batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+			}else{
+				_.checked=false;
+			}
+		});
+
+		var checkboxs=$('#form1 :input[type=checkbox]');
+		$.each(checkboxs,function(){
+			var _=this,v=initData[_.name]?initData[_.name].value:null;
+			var _this = $(this);
+			if(v!=''&&v==_.value){
+				_.checked=true;
+				batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+			}else{
+				_.checked=false;
+			}
+		});
+	}
+
+	$('#form1 :input[type=text]').change(function(){
+		var _this=$(this);
+		var p=[];
+		p.push(_this.attr('name'));
+		p.push(_this.val());
+		p.push(Date.parse(new Date())/1000);
+		$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+		set.apply(formData,p);
+		markQuestion(_this.attr('rel'),true);
+	});
+
+	$('#form1 :input[type=radio]').change(function(){
+		var _=this;
+		var _this=$(this);
+		var p=[];
+		p.push(_.name);
+		if(_.checked){
+			p.push(_.value);
+			p.push(Date.parse(new Date())/1000);
+			$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+			set.apply(formData,p);
+		}else{
+			p.push('');
+			p.push(null);
+			set.apply(formData,p);
+		}
+		markQuestion(_this.attr('rel'));
+	});
+
+	$('#form1 textarea').change(function(){
+		var _= this;
+		var _this=$(this);
+		var p=[];
+		p.push(_.name);
+		p.push(_.value);
+		p.push(Date.parse(new Date())/1000);
+		$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+		set.apply(formData,p);
+		markQuestion(_this.attr('rel'),true);
+	});
+	$('#form1 :input[type=checkbox]').change(function(){
+		var _= this;
+		var _this = $(this);
+		var p=[];
+		p.push(_.name);
+		if(_.checked){
+			p.push(_.value);
+			p.push(Date.parse(new Date())/1000);
+			$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+			set.apply(formData,p);
+		}else{
+			p.push('');
+			p.push(null);
+			set.apply(formData,p);
+		}
+		markQuestion(_this.attr('rel'));
+	});
+	$('.allquestionnumber').html($('.paperexamcontent').length);
+	$('.yesdonumber').html($('#questionindex .btn-primary').length);
+});
+</script>
+</body>
+</html>
