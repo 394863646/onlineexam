@@ -266,6 +266,27 @@ class exam_exam
 		return $this->db->exec($sql);
 	}
 
+	//增加考试试题
+	//参数：考试设置参数（数组）
+	//返回值：插入ID
+	public function updateExamQuestions2($eid,$other,$line)
+	{
+		//$data = array('examsquestions',$args,array(array("AND","eid = :eid",'eid',$eid),array("AND","$other != :$other",'$other','')));
+		//$sql = $this->pdosql->makeUpdate($data);
+		$sql = "update examsquestions SET `$other`=concat(`$other`, $line) where eid='$eid' AND `$other`<>''";
+		return $this->db->exec($sql);
+	}
+
+	//增加考试试题
+	//参数：考试设置参数（数组）
+	//返回值：插入ID
+	public function updateExamQuestions3($eid,$line)
+	{
+		$data = array('examsquestions',array('data'=>concat(`data`, $line)),array(array("AND","eid = :eid",'eid',$eid)));
+		$sql = $this->pdosql->makeUpdate($data);
+		return $this->db->exec($sql);
+	}
+
 	
 	//增加试题
 	//参数：试题参数（数组）

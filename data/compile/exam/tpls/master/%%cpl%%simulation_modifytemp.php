@@ -110,7 +110,7 @@
 							</div>
 							<div class="col-sm-4 form-inline">
 							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=<?php echo $questype['questype']; ?>" >管理题组</a></label>
-							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=<?php echo $questype['questype']; ?>&examid=<?php echo $this->tpl_var['exam']['examid']; ?>" data-target="#modal">导入题组</a></label>
+							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=<?php echo $questype['questype']; ?>&examid=<?php echo $this->tpl_var['exam']['examid']; ?>&score=<?php echo $this->tpl_var['exam']['examsetting']['questype'][$questype['questid']]['score']; ?>" data-target="#modal">导入题组</a></label>
 							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=<?php echo $questype['questype']; ?>" >删除题组</a></label>
 						    </div>
 						</div>

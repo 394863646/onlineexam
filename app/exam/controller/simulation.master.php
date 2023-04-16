@@ -655,6 +655,7 @@ class action extends app
 	{
 		$questiontype = $this->ev->get('questiontype');
 	    $examid = $this->ev->get('examid');
+		$score = $this->ev->get('scorev');
 		// if($questionparent)
 		// {
 		// 	$questions = $this->exam->getQuestionByArgs(array(array("AND","questionparent = :questionparent",'questionparent',$questionparent)));
@@ -675,6 +676,7 @@ class action extends app
 		//$this->tpl->assign("sections",$sections);
 		$this->tpl->assign("questiontype",$questiontype);
 		$this->tpl->assign("examid",$examid);
+		$this->tpl->assign("score",sprintf("%.1f",$score));
 		$this->tpl->display('simulation_detail');
 	}
 	
@@ -852,9 +854,11 @@ class action extends app
 	}
 
 	private function insubmit(){
-	
+		
 		$examid = $this->ev->get('examid');
 		$questiontype = $this->ev->get('questiontype');
+		$data = $this->ev->post('data');
+		$score = $this->ev->post('score');
 
 		$lang = array(
 	//'TYPE' => array(1 => '判断题',2 => '单选题',3 => '多选题',4 => '填空题',5 => '问答题'),
@@ -886,7 +890,7 @@ class action extends app
 		$in_dun	= $lang['in_dun'];//	  
 		$in_dian= $lang['in_dian'];//	  
 		
-		$_data  = str_replace('&#160;',' ',$_POST['data']);
+		$_data  = str_replace('&#160;',' ',$data);
 		$txtarr = explode("\n", trim($_data));
 		
 		
@@ -907,7 +911,7 @@ class action extends app
 			{
 				$questype = $this->basic->getQuestypeByName($questiontype);
 				$gid = $questype['id'];
-				
+				echo $gid;
 				$LineType = 'group';
 			}
 			elseif($insert_id==0)
@@ -917,6 +921,7 @@ class action extends app
 						'gid'	 => $gid,
 						'subject'=> $line,//$_POST['numum'] ? preg_replace("/^[\(��\[]?\s*\d+\s*[\)��\]]?[\.����]\s*/", '' , $line) : $line,
 						'addtime'=> TIME,
+						'score'=> $score,
 						'display'=> 1,
 				);
 
@@ -937,31 +942,37 @@ class action extends app
 				if(preg_match("/^({$in_dui})$/", $line, $match))//�ж���
 				{
 					$updateargs = array('type' => 1, 'result' => 1);
+					$this->exam->updateExamQuestions($insert_id,$updateargs);
 				}
 				elseif(preg_match("/^({$in_cuo})$/", $line, $match))//�ж���
 				{
 					$updateargs = array('type' => 1, 'result' => 2);
+					$this->exam->updateExamQuestions($insert_id,$updateargs);
 				}
 				elseif(preg_match("/^([A-Z])$/", $line, $match))//��ѡ��
 				{
 					$updateargs = array('type' => 2, 'result' => $match[1]);
+					$this->exam->updateExamQuestions($insert_id,$updateargs);
 				}
 				elseif(preg_match("/^([A-Z]{1,26})#?$/", $line, $match))//��ѡ��
 				{
 					$updateargs = array('type' => 3, 'result' => $match[1]);
+					$this->exam->updateExamQuestions($insert_id,$updateargs);
 				}
 				elseif($ExamType=='BLANK')
 				{
 					$updateargs = array('type' => 4, 'data' => preg_replace("/\s+/","\n",$line));
+					$this->exam->updateExamQuestions($insert_id,$updateargs);
 					$LineType = 'data';
 				}
 				elseif($ExamType=='ASK')
 				{
 					$updateargs = array('type' => 5, 'data' => $line);
+					$this->exam->updateExamQuestions($insert_id,$updateargs);
 					$LineType = 'data';
 				}
 
-				$this->exam->updateExamQuestions($insert_id,$updateargs);
+				
 			}
 			elseif(preg_match("/^{$in_img}\s*(?:\:|{$in_mao})\s*(.+)/", $line, $match))
 			{
@@ -973,7 +984,7 @@ class action extends app
 				$this->exam->updateExamQuestions($insert_id, array('note'  =>$match[1]));
 				$LineType = 'note';
 			}
-			elseif($LineType == 'subject' && preg_match("/^[A-Z]\s*(?:\.|\:|$in_dun|$in_dian|$in_mao)\s*(.*)$/", $line, $match))//ѡ�����ѡ��
+			elseif($LineType == 'subject' && preg_match("/^[A-Z]\s*(?:\.|\:|$in_dun|$in_dian|$in_mao)\s*(.*)$/", $line, $match))//
 			{
 				$this->exam->updateExamQuestions($insert_id, array('data'  => $_dot_n . $match[1]));
 				$_dot_n = "\n";
@@ -982,21 +993,29 @@ class action extends app
 			{
 				//DB::query("update %t SET `$LineType`=concat(`$LineType`, %s) where eid='$insert_id' AND uid='$uid' AND `$LineType`<>''", array('tiny_exam3_exam', "\n".$line)) ||
 
-		        $sql = "update examsquestions SET `$LineType`=concat(`$LineType`, '\n'.$line) where eid='$insert_id' AND `$LineType`<>''";
-		        $this->db->exec($sql) || $this->exam->updateExamQuestions($insert_id, array($LineType  => $line));
+		        //$sql = "update examsquestions SET `$LineType`=concat(`$LineType`, '\n'.$line) where eid='$insert_id' AND `$LineType`<>''";
+				$s = '\n'.$line;
+		        $this->exam->updateExamQuestions2($insert_id, $LineType, $s) || $this->exam->updateExamQuestions($insert_id, array($LineType  => $line));
 			}
 			elseif($LineType == 'group')
 			{
 				//DB::query("update %t SET `content`=concat(`content`, %s) where gid='$insert_id' AND uid='$uid' AND `content`<>''", array('tiny_exam3_group', "\n".$line)) ||
 				//DB::query("update %t SET `content`=%s where gid='$insert_id' AND uid='$uid'", array('tiny_exam3_group', $line));
 
-				$sql = "update examsquestions SET `content`=concat(`content`, '\n'.$line) where eid='$insert_id' AND `content`<>''";
-		        $this->db->exec($sql) || $this->exam->updateExamQuestions($insert_id, array('content' => $line));
+				//$sql = "update examsquestions SET `content`=concat(`content`, '\n'.$line) where eid='$insert_id' AND `content`<>''";
+				$s = '\n'.$line;
+		        $this->exam->updateExamQuestions2($insert_id, 'content', $s) || $this->exam->updateExamQuestions($insert_id, array('content' => $line));
 			}
 		
 		}
 		
-		$in_submit_ok = 1;
+		$message = array(
+			'statusCode' => 200,
+			"message" => "操作成功",
+			"callbackType" => "forward",
+			"forwardUrl" => "index.php?exam-master-simulation-modify&examid={$examid}&page={$page}{$u}"
+		);
+		$this->G->R($message);
 	}
 	
 	private function index()
