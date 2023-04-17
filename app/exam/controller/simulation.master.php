@@ -655,7 +655,7 @@ class action extends app
 	{
 		$questiontype = $this->ev->get('questiontype');
 	    $examid = $this->ev->get('examid');
-		$score = $this->ev->get('scorev');
+		$score = $this->ev->get('score');
 		// if($questionparent)
 		// {
 		// 	$questions = $this->exam->getQuestionByArgs(array(array("AND","questionparent = :questionparent",'questionparent',$questionparent)));
@@ -986,11 +986,16 @@ class action extends app
 			}
 			elseif($LineType == 'subject' && preg_match("/^[A-Z]\s*(?:\.|\:|$in_dun|$in_dian|$in_mao)\s*(.*)$/", $line, $match))//
 			{
-				$this->exam->updateExamQuestions($insert_id, array('data'  => $_dot_n . $match[1]));
-				$_dot_n = "\n";
+				//DB::query("update %t SET `data`=concat(`data`, %s) where eid='$insert_id' AND uid='$uid'", array('tiny_exam3_exam', $_dot_n . $match[1]));
+				
+				
+					$this->exam->updateExamQuestions3($insert_id, $_dot_n . $match[1]);
+					$_dot_n = "\n";
+				
+				
 			}
 			elseif($LineType == 'data' || $LineType == 'note' || $LineType == 'subject')
-			{
+			{echo 22;
 				//DB::query("update %t SET `$LineType`=concat(`$LineType`, %s) where eid='$insert_id' AND uid='$uid' AND `$LineType`<>''", array('tiny_exam3_exam', "\n".$line)) ||
 
 		        //$sql = "update examsquestions SET `$LineType`=concat(`$LineType`, '\n'.$line) where eid='$insert_id' AND `$LineType`<>''";
@@ -998,7 +1003,7 @@ class action extends app
 		        $this->exam->updateExamQuestions2($insert_id, $LineType, $s) || $this->exam->updateExamQuestions($insert_id, array($LineType  => $line));
 			}
 			elseif($LineType == 'group')
-			{
+			{echo 77;
 				//DB::query("update %t SET `content`=concat(`content`, %s) where gid='$insert_id' AND uid='$uid' AND `content`<>''", array('tiny_exam3_group', "\n".$line)) ||
 				//DB::query("update %t SET `content`=%s where gid='$insert_id' AND uid='$uid'", array('tiny_exam3_group', $line));
 

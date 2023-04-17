@@ -256,6 +256,16 @@ class exam_exam
 		return $this->db->lastInsertId();
 	}
 
+    //根据ID获取一个考试设置
+	//参数：考试设置ID
+	//返回值：考试设置信息数组
+	public function getExamQuestionsById($id)
+	{
+		$data = array('data','examsquestions',array(array("AND","eid = :eid",'eid',$id)));
+		$sql = $this->pdosql->makeSelect($data);
+		return $this->db->fetch($sql,'data');
+	}
+	
 	//增加考试试题
 	//参数：考试设置参数（数组）
 	//返回值：插入ID
@@ -273,7 +283,7 @@ class exam_exam
 	{
 		//$data = array('examsquestions',$args,array(array("AND","eid = :eid",'eid',$eid),array("AND","$other != :$other",'$other','')));
 		//$sql = $this->pdosql->makeUpdate($data);
-		$sql = "update examsquestions SET `$other`=concat(`$other`, $line) where eid='$eid' AND `$other`<>''";
+		$sql = "update x2_examsquestions SET `{$other}`= concat(`$other`, $line) where eid='$eid' AND `$other`<>''";
 		return $this->db->exec($sql);
 	}
 
@@ -282,8 +292,12 @@ class exam_exam
 	//返回值：插入ID
 	public function updateExamQuestions3($eid,$line)
 	{
-		$data = array('examsquestions',array('data'=>concat(`data`, $line)),array(array("AND","eid = :eid",'eid',$eid)));
+		static $concat = "";
+		//$tdata = $this->getExamQuestionsById($eid);//var_dump($tdata);
+		$concat .= $line;
+		$data = array('examsquestions',array('data'=>$concat),array(array("AND","eid = :eid",'eid',$eid)));
 		$sql = $this->pdosql->makeUpdate($data);
+		//$sql = "update examsquestions SET `data`= {'$concat.$line'} where eid='$eid'";
 		return $this->db->exec($sql);
 	}
 
