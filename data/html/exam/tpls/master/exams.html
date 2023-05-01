@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>在线考试系统</title>
+    <title>在线考试系统后台管理</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
@@ -23,7 +23,63 @@
 	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
 	<script src="app/core/styles/js/plugin.js"></script>
 </head><body>
-<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">	<div class="row-fluid">		<div class="main">			<div class="col-xs-10">				<h2 style="color:#337AB7;"><a href="index.php"><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;在线考试系统管理平台</a></h2>			</div>			<div class="col-xs-2" style="padding-top:22px;">				<ul class="list-unstyled list-inline">										<li>						<div class="btn-group">							<button type="button" class="btn btn-info"><em class="glyphicon glyphglyphicon glyphicon-user"></em> peadmin</button>							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">								<span class="caret"></span>								<span class="sr-only">Toggle Dropdown</span>							</button>							<ul class="dropdown-menu">								<li><a href="index.php?user-center"><em class="glyphicon glyphglyphicon glyphicon-user"></em> 用户中心</a></li>																<li><a href="index.php?core-master"><em class="glyphicon glyphglyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphglyphicon glyphicon-log-out"></em> 退出</a></li>							</ul>						</div>					</li>									</ul>			</div>		</div>	</div></div><div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">	<div class="row-fluid">		<div class="main">			<div class="col-xs-12">				<ul class="list-unstyled list-inline">					<li class="menu col-xs-1">						<a href="index.php?core-master">全局</a>					</li>															<li class="menu col-xs-1">						<a href="index.php?user-master">用户模块</a>					</li>																				<li class="menu col-xs-1 active">						<a href="index.php?exam-master">考试模块</a>					</li>																														<li class="menu col-xs-1">						<a href="index.php?document-master">文件模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?content-master">内容模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?bank-master">财务模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?course-master">课程模块</a>					</li>														</ul>			</div>		</div>	</div></div><div class="container-fluid">
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-10">
+				<h2 style="color:#337AB7;"><a href="index.php"><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;美耀在线考试管理平台</a></h2>
+			</div>
+			<div class="col-xs-2" style="padding-top:22px;">
+				<ul class="list-unstyled list-inline">
+										<li>
+						<div class="btn-group">
+							<button type="button" class="btn btn-info"><em class="glyphicon glyphglyphicon glyphicon-user"></em> peadmin</button>
+							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?user-center"><em class="glyphicon glyphglyphicon glyphicon-user"></em> 用户中心</a></li>
+																<li><a href="index.php?core-master"><em class="glyphicon glyphglyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphglyphicon glyphicon-log-out"></em> 退出</a></li>
+							</ul>
+						</div>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-12">
+				<ul class="list-unstyled list-inline">
+					<li class="menu col-xs-1">
+						<a href="index.php?core-master">全局</a>
+					</li>
+															<li class="menu col-xs-1">
+						<a href="index.php?user-master">用户模块</a>
+					</li>
+																				<li class="menu col-xs-1 active">
+						<a href="index.php?exam-master">考试模块</a>
+					</li>
+																														<li class="menu col-xs-1">
+						<a href="index.php?document-master">文件模块</a>
+					</li>
+																				<li class="menu col-xs-1">
+						<a href="index.php?content-master">内容模块</a>
+					</li>
+																				<li class="menu col-xs-1">
+						<a href="index.php?bank-master">财务模块</a>
+					</li>
+																				<li class="menu col-xs-1">
+						<a href="index.php?course-master">课程模块</a>
+					</li>
+														</ul>
+			</div>
+		</div>
+	</div>
+</div><div class="container-fluid">
 	<div class="row-fluid">
 		<div class="main">
 			<div class="col-xs-2" style="padding-top:10px;margin-bottom:0px;">
@@ -206,6 +262,27 @@ text-decoration:none;}
 			            <tbody>
 		                    					        <tr>
 								<td>
+									38								</td>
+								<td>
+									ces								</td>
+								<td>
+									peadmin								</td>
+								<td>
+									手工组卷								</td>
+								<td>
+									2023-04-21								</td>
+								<td>
+									人力资源中级经济基础知识								</td>
+								<td>
+									<div class="btn-group">
+			                    					                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=38" title="查看试卷"><em class="glyphicon glyphicon-list-alt"></em></a>
+			                    					                    					                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=38" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+										<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=38" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+			                    	</div>
+								</td>
+					        </tr>
+					        					        <tr>
+								<td>
 									37								</td>
 								<td>
 									《人力资源管理专业知识与实务》(中级)								</td>
@@ -385,30 +462,10 @@ text-decoration:none;}
 			                    	</div>
 								</td>
 					        </tr>
-					        					        <tr>
-								<td>
-									27								</td>
-								<td>
-									人力资源管理师四级模拟测试一								</td>
-								<td>
-									quchangan								</td>
-								<td>
-									随机组卷								</td>
-								<td>
-									2020-04-14								</td>
-								<td>
-									人力资源四级题库								</td>
-								<td>
-									<div class="btn-group">
-			                    					                    					                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=27" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-										<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=27" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-			                    	</div>
-								</td>
-					        </tr>
 					        			        	</tbody>
 			        </table>
 			        <ul class="pagination pull-right">
-			            <li><a href="#" class="current">1</a></li><li><a target="" href="index.php?exam-master-exams&page=2">2</a></li><li><a target="" href="index.php?exam-master-exams&page=3">3</a></li><li><a>共23条数据</a></li>			        </ul>
+			            <li><a href="#" class="current">1</a></li><li><a target="" href="index.php?exam-master-exams&page=&page=2">2</a></li><li><a target="" href="index.php?exam-master-exams&page=&page=3">3</a></li><li><a>共24条数据</a></li>			        </ul>
 				</div>
 			</div>
 		</div>

@@ -119,7 +119,7 @@
 			                    		<?php } ?>
 			                    		
 			                    		<a class="btn" href="index.php?<?php echo $this->tpl_var['_app']; ?>-master-simulation-modify&page=<?php echo $this->tpl_var['page']; ?>&examid=<?php echo $exam['examid']; ?><?php echo $this->tpl_var['u']; ?>" title="管理试卷"><em class="glyphicon glyphicon-edit"></em></a>
-			                    		
+			                    		<a class="btn" href="index.php?<?php echo $this->tpl_var['_app']; ?>-master-simulation-modifypaper&page=<?php echo $this->tpl_var['page']; ?>&examid=<?php echo $exam['examid']; ?><?php echo $this->tpl_var['u']; ?>" title="预览该试卷"><em class="glyphicon glyphicon-inbox"></em></a>
 										<a class="btn confirm" href="index.php?<?php echo $this->tpl_var['_app']; ?>-master-simulation-del&page=<?php echo $this->tpl_var['page']; ?>&examid=<?php echo $exam['examid']; ?><?php echo $this->tpl_var['u']; ?>" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
 			                    	</div>
 								</td>

@@ -96,16 +96,15 @@
 						{x2;tree:$questypes,questype,qid}
 						<div class="form-group questpanel panel_{x2;v:questype['questid']}">
 							<label class="control-label col-sm-2">{x2;v:questype['questype']}：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_{x2;v:questype['questid']}" type="text" class="form-control" needle="needle" name="args[examsetting][questype][{x2;v:questype['questid']}][number]" value="{x2;eval: echo intval($exam['examsetting']['questype'][v:questype['questid']]['number'])}" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][{x2;v:questype['questid']}][score]" value="{x2;eval: echo floatval($exam['examsetting']['questype'][v:questype['questid']]['score'])}" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][{x2;v:questype['questid']}][describe]" value="{x2;$exam['examsetting']['questype'][v:questype['questid']]['describe']}" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype={x2;v:questype['questype']}" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype={x2;v:questype['questype']}&examid={x2;$exam['examid']}" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype={x2;v:questype['questype']}&examid={x2;$exam['examid']}&score={x2;$exam['examsetting']['questype'][v:questype['questid']]['score']}" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype={x2;v:questype['questype']}" >删除题组</a></label>
 						    </div>
 						</div>
 						{x2;endtree}

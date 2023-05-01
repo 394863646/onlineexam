@@ -115,7 +115,7 @@
 			                    		{x2;endif}
 			                    		
 			                    		<a class="btn" href="index.php?{x2;$_app}-master-simulation-modify&page={x2;$page}&examid={x2;v:exam['examid']}{x2;$u}" title="管理试卷"><em class="glyphicon glyphicon-edit"></em></a>
-			                    		
+			                    		<a class="btn" href="index.php?{x2;$_app}-master-simulation-modifypaper&page={x2;$page}&examid={x2;v:exam['examid']}{x2;$u}" title="预览该试卷"><em class="glyphicon glyphicon-inbox"></em></a>
 										<a class="btn confirm" href="index.php?{x2;$_app}-master-simulation-del&page={x2;$page}&examid={x2;v:exam['examid']}{x2;$u}" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
 			                    	</div>
 								</td>

@@ -102,16 +102,15 @@
  $qid++; ?>
 						<div class="form-group questpanel panel_<?php echo $questype['questid']; ?>">
 							<label class="control-label col-sm-2"><?php echo $questype['questype']; ?>：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_<?php echo $questype['questid']; ?>" type="text" class="form-control" needle="needle" name="args[examsetting][questype][<?php echo $questype['questid']; ?>][number]" value="<?php echo intval($this->tpl_var['exam']['examsetting']['questype'][$questype['questid']]['number']); ?>" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][<?php echo $questype['questid']; ?>][score]" value="<?php echo floatval($this->tpl_var['exam']['examsetting']['questype'][$questype['questid']]['score']); ?>" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][<?php echo $questype['questid']; ?>][describe]" value="<?php echo $this->tpl_var['exam']['examsetting']['questype'][$questype['questid']]['describe']; ?>" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=<?php echo $questype['questype']; ?>" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=<?php echo $questype['questype']; ?>&examid=<?php echo $this->tpl_var['exam']['examid']; ?>" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=<?php echo $questype['questype']; ?>&examid=<?php echo $this->tpl_var['exam']['examid']; ?>&score=<?php echo $this->tpl_var['exam']['examsetting']['questype'][$questype['questid']]['score']; ?>" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=<?php echo $questype['questype']; ?>" >删除题组</a></label>
 						    </div>
 						</div>
 						<?php } ?>

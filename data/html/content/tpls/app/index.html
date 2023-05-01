@@ -42,8 +42,19 @@
 			</div>
 			<div class="col-xs-2" style="padding-top:22px;">
 				<ul class="list-unstyled list-inline">
-										<li><a href="javascript:;" onclick="javascript:$.loginbox.show();" class="btn btn-default"> 登 录 </a></li>
-					<li><a href="index.php?user-app-register" class="btn btn-default"> 注 册 </a></li>
+										<li>
+						<div class="btn-group">
+							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> peadmin</button>
+							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>
+																<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>
+							</ul>
+						</div>
+					</li>
 									</ul>
 			</div>
 		</div>
@@ -173,18 +184,6 @@
 			</div>
 			<div class="col-xs-9" style="padding-left:0px;">
 								<div class="col-xs-3">
-					<a href="index.php?exam-app-index-setCurrentBasic&basicid=11" class="thumbnail ajax">
-						<img src="files/attach/images/content/20190828/15669691861386.jpg" alt="" width="180">
-					</a>
-					<h5 class="text-center">人力资源中级专业知识与实务</h5>
-				</div>
-												<div class="col-xs-3">
-					<a href="index.php?exam-app-index-setCurrentBasic&basicid=12" class="thumbnail ajax">
-						<img src="files/attach/images/content/20190916/15686011151590.jpg" alt="" width="180">
-					</a>
-					<h5 class="text-center">人力资源中级基础知识</h5>
-				</div>
-												<div class="col-xs-3">
 					<a href="index.php?exam-app-index-setCurrentBasic&basicid=13" class="thumbnail ajax">
 						<img src="files/attach/images/content/20200507/15888206479423.jpg" alt="" width="180">
 					</a>

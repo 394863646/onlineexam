@@ -244,6 +244,17 @@ class exam_exam
 		return $this->db->lastInsertId();
 	}
 
+	//删除考试设置
+	//参数：考试ID
+	//返回值：受影响记录数
+	public function delExamQuestions($id)
+	{
+		$data = array('examsquestions',array(array("AND","eid = :eid",'eid',$id)));
+		$sql = $this->pdosql->makeDelete($data);
+	
+		return $this->db->exec($sql);
+	}
+	
 	//增加考试试题
 	//参数：考试设置参数（数组）
 	//返回值：插入ID
@@ -259,11 +270,25 @@ class exam_exam
     //根据ID获取一个考试设置
 	//参数：考试设置ID
 	//返回值：考试设置信息数组
+	public function getExamQuestions($gid, $cid, $display = 1)
+	{
+		$where = array(array("AND","gid = :gid",'gid',$gid),array("AND","cid = :cid",'cid',$cid));
+		
+		$display ? $where[] = array("AND","display = :display",'display',1) : '';
+		$order = array('sort','eid');
+		$data = array(false,'examsquestions',$where,'',$order);
+		$sql = $this->pdosql->makeSelect($data);
+		return $this->db->fetchAll($sql);
+	}
+	
+	//根据ID获取一个考试设置
+	//参数：考试设置ID
+	//返回值：考试设置信息数组
 	public function getExamQuestionsById($id)
 	{
-		$data = array('data','examsquestions',array(array("AND","eid = :eid",'eid',$id)));
+		$data = array(false,'examsquestions',array(array("AND","eid = :eid",'eid',$id)));
 		$sql = $this->pdosql->makeSelect($data);
-		return $this->db->fetch($sql,'data');
+		return $this->db->fetch($sql);
 	}
 	
 	//增加考试试题
@@ -284,20 +309,6 @@ class exam_exam
 		//$data = array('examsquestions',$args,array(array("AND","eid = :eid",'eid',$eid),array("AND","$other != :$other",'$other','')));
 		//$sql = $this->pdosql->makeUpdate($data);
 		$sql = "update x2_examsquestions SET `{$other}`= concat(`$other`, $line) where eid='$eid' AND `$other`<>''";
-		return $this->db->exec($sql);
-	}
-
-	//增加考试试题
-	//参数：考试设置参数（数组）
-	//返回值：插入ID
-	public function updateExamQuestions3($eid,$line)
-	{
-		static $concat = "";
-		//$tdata = $this->getExamQuestionsById($eid);//var_dump($tdata);
-		$concat .= $line;
-		$data = array('examsquestions',array('data'=>$concat),array(array("AND","eid = :eid",'eid',$eid)));
-		$sql = $this->pdosql->makeUpdate($data);
-		//$sql = "update examsquestions SET `data`= {'$concat.$line'} where eid='$eid'";
 		return $this->db->exec($sql);
 	}
 
@@ -343,7 +354,15 @@ class exam_exam
 		}
 		return $data;
 	}
-
+	
+	public function fetch_exam_by_gid($gid,$cid){	
+		$exams = $this->getExamQuestions($gid, $cid);
+		foreach($exams AS $ek=>$e){
+			$exams[$ek]['subject'] = str_replace("\n","<br>",$e['subject']);
+			$exams[$ek]['note']    = str_replace("\n","<br>",$e['note']);
+		}
+		return $exams;
+	}
 	//增加特殊题型
 	//暂时不用
 	public function addQuestionRows($args)

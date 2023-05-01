@@ -19,7 +19,7 @@
 				<div class="box itembox" style="padding-top:10px;margin-bottom:0px;">
 					<div class="col-xs-12">
 						<h5 class="title">
-							开发者信息11
+							开发者信息
 						</h5>
 						<p>
 							QQ:413071073 官方站：<a href="http://www.codehy.com">http://www.codehy.com</a> 本版版本号：<?php echo PE_VERSION; ?>

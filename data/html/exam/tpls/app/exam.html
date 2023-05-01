@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>在线考试</title>
+    <title>美耀在线考试系统</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
@@ -27,7 +27,7 @@
 	<div class="row-fluid">
 		<div class="main">
 			<div class="col-xs-3">
-				<h1 style="font-size:42px;color:#337AB7;"><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;<b>在线考试</b></h1>
+				<h1 style="font-size:42px;color:#337AB7;"><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;<b>美耀</b></h1>
 			</div>
 			<div class="col-xs-1">
 			</div>
@@ -44,14 +44,14 @@
 				<ul class="list-unstyled list-inline">
 										<li>
 						<div class="btn-group">
-							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> ceshi</button>
+							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> peadmin</button>
 							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="caret"></span>
 								<span class="sr-only">Toggle Dropdown</span>
 							</button>
 							<ul class="dropdown-menu">
 								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>
-																								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>
+																<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>
 							</ul>
 						</div>
 					</li>
@@ -99,8 +99,25 @@
 	                </ul>
                 </div>
                 <div class="col-xs-12" style="padding-left:0px;">
-                                	                	                								<div class="text-center"><a class="ajax btn btn-primary" action-before="clearStorage" href="index.php?exam-app-exam-selectquestions&examid=" action-before="clearStorage">开始考试</a></div>
-						            		            		                                </div>
+                                	                	<div class="box itembox" style="padding-top:20px;">
+						<div class="col-xs-3">
+							<a href="index.php?exam-app-recover" class="thumbnail pull-left ajax">
+								<img src="app/core/styles/img/item.jpg" alt="" width="100%">
+							</a>
+						</div>
+						<div class="col-xs-9">
+							<a href="index.php?exam-app-recover" class="ajax"><h4 class="title">意外续考</h4></a>
+							<p>系统检测到您曾经在2023-04-30 03:05:18开启了一场未完成的考试，试卷名称为《《人力资源管理专业知识与实务》(中级)》，点击继续考试可以进行续考。</p>
+							<hr/>
+							<p>
+								<span class="pull-right">
+									<a href="index.php?exam-app-recover" class="btn btn-primary ajax">继续考试</a>&nbsp;&nbsp;
+									<a href="index.php?exam-app-recover-clearexamsession" class="btn btn-danger confirm" msg="放弃考试会删除此次考试会话并不能恢复，确认要放弃吗？">放弃考试</a>
+								</span>
+							</p>
+						</div>
+					</div>
+                	                                </div>
 			</div>
 		</div>
 	</div>
@@ -110,8 +127,9 @@
 		<div class="main itembox">
 			<div class="col-xs-12">
 				<ul class="list-unstyled">
-					<li class="text-center"><a href="">在线考试 </a></li>
-					<li class="text-center"><a href="">Copyright © 2015-2017</a></li>
+								<li class="text-center"><a href='http://www.codehy.com' target='_blank'>源码海洋网提供演示</a></li>
+					<li class="text-center"><a href='http://shop35399040.taobao.com' target='_blank'>官方淘宝店铺：shop35399040.taobao.com</a></li>
+					<li class="text-center"><a href='http://www.yun386.com' target='_blank'>专业erp,crm,oa,进销存,app,微信小程序软件开发：天津美耀科技发展有限公司</a></li>
 				</ul>
 			</div>
 		</div>

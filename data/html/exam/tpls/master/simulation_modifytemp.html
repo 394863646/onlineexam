@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>在线考试系统</title>
+    <title>在线考试系统后台管理</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
@@ -23,7 +23,63 @@
 	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
 	<script src="app/core/styles/js/plugin.js"></script>
 </head><body>
-<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">	<div class="row-fluid">		<div class="main">			<div class="col-xs-10">				<h2 style="color:#337AB7;"><a href="index.php"><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;在线考试系统管理平台</a></h2>			</div>			<div class="col-xs-2" style="padding-top:22px;">				<ul class="list-unstyled list-inline">										<li>						<div class="btn-group">							<button type="button" class="btn btn-info"><em class="glyphicon glyphglyphicon glyphicon-user"></em> peadmin</button>							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">								<span class="caret"></span>								<span class="sr-only">Toggle Dropdown</span>							</button>							<ul class="dropdown-menu">								<li><a href="index.php?user-center"><em class="glyphicon glyphglyphicon glyphicon-user"></em> 用户中心</a></li>																<li><a href="index.php?core-master"><em class="glyphicon glyphglyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphglyphicon glyphicon-log-out"></em> 退出</a></li>							</ul>						</div>					</li>									</ul>			</div>		</div>	</div></div><div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">	<div class="row-fluid">		<div class="main">			<div class="col-xs-12">				<ul class="list-unstyled list-inline">					<li class="menu col-xs-1">						<a href="index.php?core-master">全局</a>					</li>															<li class="menu col-xs-1">						<a href="index.php?user-master">用户模块</a>					</li>																				<li class="menu col-xs-1 active">						<a href="index.php?exam-master">考试模块</a>					</li>																														<li class="menu col-xs-1">						<a href="index.php?document-master">文件模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?content-master">内容模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?bank-master">财务模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?course-master">课程模块</a>					</li>														</ul>			</div>		</div>	</div></div><div class="container-fluid">
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-10">
+				<h2 style="color:#337AB7;"><a href="index.php"><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;美耀在线考试管理平台</a></h2>
+			</div>
+			<div class="col-xs-2" style="padding-top:22px;">
+				<ul class="list-unstyled list-inline">
+										<li>
+						<div class="btn-group">
+							<button type="button" class="btn btn-info"><em class="glyphicon glyphglyphicon glyphicon-user"></em> peadmin</button>
+							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?user-center"><em class="glyphicon glyphglyphicon glyphicon-user"></em> 用户中心</a></li>
+																<li><a href="index.php?core-master"><em class="glyphicon glyphglyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphglyphicon glyphicon-log-out"></em> 退出</a></li>
+							</ul>
+						</div>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-12">
+				<ul class="list-unstyled list-inline">
+					<li class="menu col-xs-1">
+						<a href="index.php?core-master">全局</a>
+					</li>
+															<li class="menu col-xs-1">
+						<a href="index.php?user-master">用户模块</a>
+					</li>
+																				<li class="menu col-xs-1 active">
+						<a href="index.php?exam-master">考试模块</a>
+					</li>
+																														<li class="menu col-xs-1">
+						<a href="index.php?document-master">文件模块</a>
+					</li>
+																				<li class="menu col-xs-1">
+						<a href="index.php?content-master">内容模块</a>
+					</li>
+																				<li class="menu col-xs-1">
+						<a href="index.php?bank-master">财务模块</a>
+					</li>
+																				<li class="menu col-xs-1">
+						<a href="index.php?course-master">课程模块</a>
+					</li>
+														</ul>
+			</div>
+		</div>
+	</div>
+</div><div class="container-fluid">
 	<div class="row-fluid">
 		<div class="main">
 			<div class="col-xs-2" style="padding-top:10px;margin-bottom:0px;">
@@ -207,170 +263,158 @@ text-decoration:none;}
 						</div>
 												<div class="form-group questpanel panel_1">
 							<label class="control-label col-sm-2">单选题：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_1" type="text" class="form-control" needle="needle" name="args[examsetting][questype][1][number]" value="50" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][1][score]" value="1" size="2" msg="您必须填写每题的分值"/>
-								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][1][describe]" value="" size="12"/>
+								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][1][describe]" value="选择22" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=单选题" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=单选题&examid=37" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=单选题&examid=37&score=1" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=单选题" >删除题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_2">
 							<label class="control-label col-sm-2">多选题：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_2" type="text" class="form-control" needle="needle" name="args[examsetting][questype][2][number]" value="20" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][2][score]" value="2" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][2][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=多选题" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=多选题&examid=37" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=多选题&examid=37&score=2" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=多选题" >删除题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_3">
 							<label class="control-label col-sm-2">判断题：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
-								<input id="iselectallnumber_3" type="text" class="form-control" needle="needle" name="args[examsetting][questype][3][number]" value="0" size="2" msg="您必须填写总题数"/>
-								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][3][score]" value="0" size="2" msg="您必须填写每题的分值"/>
+								<input id="iselectallnumber_3" type="text" class="form-control" needle="needle" name="args[examsetting][questype][3][number]" value="12" size="2" msg="您必须填写总题数"/>
+								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][3][score]" value="1" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][3][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=判断题" >管理题组</a></label>
-							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=判断题&examid=37&score=0" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=判断题" >删除题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=判断题&examid=37" >管理题组</a></label>
+							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=判断题&examid=37&score=1" data-target="#modal">导入题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_4">
 							<label class="control-label col-sm-2">定值填空：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_4" type="text" class="form-control" needle="needle" name="args[examsetting][questype][4][number]" value="0" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][4][score]" value="0" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][4][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=定值填空" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=定值填空&examid=37" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=定值填空&examid=37&score=0" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=定值填空" >删除题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_5">
 							<label class="control-label col-sm-2">填空题：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
-								<input id="iselectallnumber_5" type="text" class="form-control" needle="needle" name="args[examsetting][questype][5][number]" value="0" size="2" msg="您必须填写总题数"/>
-								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][5][score]" value="0" size="2" msg="您必须填写每题的分值"/>
+								<input id="iselectallnumber_5" type="text" class="form-control" needle="needle" name="args[examsetting][questype][5][number]" value="8" size="2" msg="您必须填写总题数"/>
+								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][5][score]" value="3" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][5][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=填空题" >管理题组</a></label>
-							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=填空题&examid=37&score=0" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=填空题" >删除题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=填空题&examid=37" >管理题组</a></label>
+							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=填空题&examid=37&score=3" data-target="#modal">导入题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_6">
 							<label class="control-label col-sm-2">简答题：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
-								<input id="iselectallnumber_6" type="text" class="form-control" needle="needle" name="args[examsetting][questype][6][number]" value="1" size="2" msg="您必须填写总题数"/>
+								<input id="iselectallnumber_6" type="text" class="form-control" needle="needle" name="args[examsetting][questype][6][number]" value="3" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][6][score]" value="10" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][6][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=简答题" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=简答题&examid=37" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=简答题&examid=37&score=10" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=简答题" >删除题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_7">
 							<label class="control-label col-sm-2">案例分析：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_7" type="text" class="form-control" needle="needle" name="args[examsetting][questype][7][number]" value="0" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][7][score]" value="0" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][7][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=案例分析" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=案例分析&examid=37" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=案例分析&examid=37&score=0" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=案例分析" >删除题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_8">
 							<label class="control-label col-sm-2">计算题：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_8" type="text" class="form-control" needle="needle" name="args[examsetting][questype][8][number]" value="0" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][8][score]" value="0" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][8][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=计算题" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=计算题&examid=37" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=计算题&examid=37&score=0" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=计算题" >删除题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_9">
 							<label class="control-label col-sm-2">综合分析题：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_9" type="text" class="form-control" needle="needle" name="args[examsetting][questype][9][number]" value="0" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][9][score]" value="0" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][9][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=综合分析题" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=综合分析题&examid=37" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=综合分析题&examid=37&score=0" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=综合分析题" >删除题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_10">
 							<label class="control-label col-sm-2">综合题：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_10" type="text" class="form-control" needle="needle" name="args[examsetting][questype][10][number]" value="0" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][10][score]" value="0" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][10][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=综合题" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=综合题&examid=37" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=综合题&examid=37&score=0" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=综合题" >删除题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_11">
 							<label class="control-label col-sm-2">方案设计题：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_11" type="text" class="form-control" needle="needle" name="args[examsetting][questype][11][number]" value="0" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][11][score]" value="0" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][11][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=方案设计题" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=方案设计题&examid=37" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=方案设计题&examid=37&score=0" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=方案设计题" >删除题组</a></label>
 						    </div>
 						</div>
 												<div class="form-group questpanel panel_12">
 							<label class="control-label col-sm-2">不定项选择题：</label>
-							<div class="col-sm-6 form-inline">
+							<div class="col-sm-7 form-inline">
 								<span class="info">共&nbsp;</span>
 								<input id="iselectallnumber_12" type="text" class="form-control" needle="needle" name="args[examsetting][questype][12][number]" value="0" size="2" msg="您必须填写总题数"/>
 								<span class="info">&nbsp;题，每题&nbsp;</span><input class="form-control" needle="needle" type="text" name="args[examsetting][questype][12][score]" value="0" size="2" msg="您必须填写每题的分值"/>
 								<span class="info">&nbsp;分，描述&nbsp;</span><input class="form-control" type="text" name="args[examsetting][questype][12][describe]" value="" size="12"/>
 							</div>
-							<div class="col-sm-4 form-inline">
-							 <label ><a title="管理题组" href="index.php?exam-master-simulation-guanli&questiontype=不定项选择题" >管理题组</a></label>
+							<div class="col-sm-3 form-inline">
+							 <label ><a title="管理题组" href="index.php?exam-master-simulation-questiongroup&questiontype=不定项选择题&examid=37" >管理题组</a></label>
 							 <label ><a title="导入题组" class="selfmodal" href="javascript:;" url="index.php?exam-master-simulation-detail&questiontype=不定项选择题&examid=37&score=0" data-target="#modal">导入题组</a></label>
-							 <label><a title="删除题组" href="index.php?exam-master-simulation-delg&questiontype=不定项选择题" >删除题组</a></label>
 						    </div>
 						</div>
 												
